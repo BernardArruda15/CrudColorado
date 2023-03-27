@@ -1,0 +1,10 @@
+﻿@model CrudColorado.WebApp.Models.ClientModel
+
+@{
+    ViewData["Title"] = "DeleteClient";
+    Layout = "~/Views/Shared/_clientLayout.cshtml";
+}
+<form asp-action="DeleteClient" method="post">
+     <input type="hidden" value="@Model.Id" name="Id" />
+     <input type="image" src="/icon/close.png" />
+</form>

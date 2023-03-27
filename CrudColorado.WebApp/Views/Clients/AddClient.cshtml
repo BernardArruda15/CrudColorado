@@ -1,0 +1,48 @@
+﻿@model CrudColorado.WebApp.Models.ClientModel
+
+@{
+    ViewData["Title"] = "AddClient";
+    Layout = "~/Views/Shared/_clientLayout.cshtml";
+}
+
+<h2>Novo cliente <a asp-action="Index" class="btn btn-sm btn-outline-success">Retorna</a></h2>
+
+<form asp-action="AddClient" method="post">
+    <div class="form-group">
+        <label for="Name">Nome:</label>
+        <input class="form-control" name="Name" />
+    </div>
+    <div class="form-group">
+        <label for="Address">Endereço:</label>
+        <input class="form-control" name="Address" />
+    </div>
+    <div class="form-group">
+        <label for="City">Cidade:</label>
+        <input class="form-control" name="City" />
+    </div>
+    <div class="form-group">
+        <label for="State">Estado:</label>
+        <input class="form-control" name="State" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Novo cliente</button>
+    </div>
+</form>
+
+@if (Model != null)
+{
+    <h2>Reserva</h2>
+    <table class="table table-sm table-striped table-bordered m-2">
+        <thead><tr><th>ID</th><th>Nome</th><th>Endereço</th><th>Cidade</th><th>Estado</th><th>Data Inserção</th></tr></thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Name</td>
+                <td>@Model.Address</td>
+                <td>@Model.City</td>
+                <td>@Model.State</td>
+                <td>@Model.DtInsertion</td>
+            </tr>
+        </tbody>
+    </table>
+}
